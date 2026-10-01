@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens (ooca CI) ---------- */
+@theme {
+  --color-turq: #00C4B3;
+  --color-turq-text: #009688;
+  --color-turq-2: #B3EDE8;
+  --color-turq-3: #DBF0EE;
+  --color-ink: #355956;
+  --color-blue: #1F77DF;
+  --color-marigold: #F9A000;
+  --color-flamingo: #EF7773;
+  --color-flamingo-light: #FAD6D5;
+  --color-surface: #F6F6F6;
+  /* ใส่ @font-face ของ Gotham Rounded เองได้ แล้วคงชื่อไว้ตัวแรก */
+  --font-sans: "Gotham Rounded", "Noto Sans Thai", Tahoma, sans-serif;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-breathe: breathe 8s ease-in-out infinite;
+  @keyframes float { 50% { transform: translateY(-6px); } }
+  @keyframes breathe { 0%, 100% { transform: scale(.8); } 50% { transform: scale(1.2); } }
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html, body, #root { min-height: 100%; }
+  body {
+    margin: 0;
+    color: var(--color-ink);
+    font-size: 16px;
+    line-height: 1.6;
+    color-scheme: light;
+    background: linear-gradient(180deg, #DBF0EE 0%, #F6F6F6 60%) no-repeat, #F6F6F6;
+    padding: env(safe-area-inset-top, 0) 0 env(safe-area-inset-bottom, 0);
+  }
+  /* พื้นหลังหน้าผลลัพธ์เปลี่ยนตามสภาพอากาศ (App.jsx ตั้งค่า data-weather) */
+  body[data-weather="sun"]   { background: radial-gradient(circle at 50% -10%, #F8E4B3 0, #FFF9EC 28%, #F6F6F6 64%) no-repeat, #F6F6F6; }
+  body[data-weather="cloud"] { background: radial-gradient(circle at 50% -10%, #E4EFFB 0, #F5FAFF 28%, #F6F6F6 64%) no-repeat, #F6F6F6; }
+  body[data-weather="storm"] { background: radial-gradient(circle at 50% -10%, #C7DDF7 0, #F3F7FC 28%, #F6F6F6 64%) no-repeat, #F6F6F6; }
+  body[data-weather="fog"]   { background: radial-gradient(circle at 50% -10%, #DBF0EE 0, #F3FCFB 28%, #F6F6F6 64%) no-repeat, #F6F6F6; }
+  h1 { font-size: 26px; line-height: 1.35; font-weight: 800; margin: 18px 0 6px; }
+  h2 { font-size: 20px; font-weight: 800; margin: 0 0 6px; }
+  p  { margin: 0 0 12px; }
+  button, input { font: inherit; }
+  button:focus-visible, input:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+}
+
+/* ---------- Reusable components ---------- */
+@layer components {
+  .btn { @apply block w-full cursor-pointer rounded-full bg-turq p-3.5 text-center text-base font-extrabold text-white no-underline disabled:cursor-not-allowed disabled:opacity-40; }
+  .btn-sec { @apply border-2 border-turq bg-transparent text-turq-text; }
+  .opt { @apply flex cursor-pointer items-center gap-1.5 rounded-3xl border-2 border-turq-2 bg-white px-2.5 py-4 text-base font-semibold text-inherit transition hover:border-turq active:scale-[.97]; }
+  .opt-row { @apply justify-start rounded-full px-[18px] py-4 text-left; }
+  .card { @apply mt-3.5 rounded-3xl border border-turq/10 bg-white/95 p-[22px] shadow-[0_8px_16px_rgba(0,196,179,.12)]; }
+  .sub { @apply text-[15px] opacity-80; }
+  .link-skip { @apply cursor-pointer border-0 bg-transparent text-sm font-semibold text-turq-text underline; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation: none !important; transition: none !important; }
+}
