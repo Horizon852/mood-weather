@@ -6,7 +6,7 @@
 
 | | ลิงก์ |
 |---|---|
-| เว็บที่ใช้งานได้ | https://resonant-quokka-e3c655.netlify.app/ |
+| เว็บที่ใช้งานได้ | [https://resonant-quokka-e3c655.netlify.app/](https://teal-gaufre-ffc4b3.netlify.app/) |
 | Figma | https://www.figma.com/design/n9WRGG5wSOdgAoBjtk5LAa/mood-weather?node-id=0-1&t=utfs4M7wSfMVrmcT-1 |
 | ซอร์สโค้ด | repository นี้ |
 
