@@ -35,7 +35,7 @@ function NoteBox({ title, desc, placeholder, cta }) {
   const release = () => text.trim() && (setText(''), setReleased(true))
   const copy = async () => {
     if (!text.trim()) return
-    try { await navigator.clipboard.writeText(text); setCopied(true) } catch { /* เบราว์เซอร์ไม่อนุญาต */ }
+    try { await navigator.clipboard.writeText(text); setCopied(true) } catch { setCopied('fail') }
   }
   if (released) {
     return (
@@ -55,7 +55,7 @@ function NoteBox({ title, desc, placeholder, cta }) {
         onKeyDown={(e) => e.key === 'Enter' && release()}
         className="w-full rounded-lg border-2 border-turq-2 bg-white p-3" />
       <button className="btn mt-2.5" disabled={!text.trim()} onClick={release}>{cta}</button>
-      <button className="link-skip mx-auto mt-2.5 block" onClick={copy}>{copied ? 'คัดลอกแล้ว' : 'คัดลอกไว้ในโน้ตของฉัน'}</button>
+      <button className="link-skip mx-auto mt-2.5 block" onClick={copy}>{copied === 'fail' ? 'คัดลอกไม่ได้ ลองเลือกข้อความแล้วคัดลอกเอง' : copied ? 'คัดลอกแล้ว' : 'คัดลอกไว้ในโน้ตของฉัน'}</button>
     </div>
   )
 }
