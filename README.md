@@ -7,7 +7,7 @@
 | | ลิงก์ |
 |---|---|
 | เว็บที่ใช้งานได้ | [https://resonant-quokka-e3c655.netlify.app/](https://teal-gaufre-ffc4b3.netlify.app/) |
-| Figma | https://www.figma.com/design/n9WRGG5wSOdgAoBjtk5LAa/mood-weather?node-id=0-1&t=utfs4M7wSfMVrmcT-1 |
+| Figma | [https://www.figma.com/design/n9WRGG5wSOdgAoBjtk5LAa/mood-weather?node-id=0-1&t=utfs4M7wSfMVrmcT-1](https://www.figma.com/design/n9WRGG5wSOdgAoBjtk5LAa/mood-weather?node-id=64-2&t=XPmnMNgSKUYfu1Bv-4) |
 | ซอร์สโค้ด | repository นี้ |
 
 ออกแบบและพัฒนาโดย: **ศุภชัย บุตรเสือ**
